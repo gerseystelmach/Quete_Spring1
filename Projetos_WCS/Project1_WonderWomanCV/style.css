@@ -1,0 +1,652 @@
+:root {
+  /* couleurs définies */
+
+  --title-font: "Comic Book";
+
+  --text-font: "Comic Neue";
+
+  --primary-color: #2b3f7e;
+
+  --secondary-color: #fff;
+
+  --light: #fff;
+
+  --dark: #2b3f7e;
+
+  --bannerColor: #282846;
+
+  --bannerTextColor: #ffffff;
+
+  /* partie non faite */
+
+  --spacing: 8px;
+
+  --spacing-2: calc(var(--spacing) * 2);
+
+  --spacing-4: calc(var(--spacing) * 4);
+
+  --text-font-size: 16pt;
+
+  --title-font-size: 24pt;
+  /* Thuy - Declare a variable of which value is the height of navigateur that can be used for calculating the height of sections */
+  --nav-height: 80px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  width: 100%;
+}
+.container {
+  width: 75%;
+  padding: var(--spacing-2);
+  margin: auto;
+}
+
+p {
+  font-size: var(--text-font-size);
+  font-family: var(--text-font);
+}
+
+h2 {
+  font-size: 40px;
+  font-family: var(--title-font);
+  margin: var(--spacing-4) 0;
+}
+
+h3 {
+  font-size: 28px;
+  font-family: var(--title-font);
+}
+
+/* Style for menu - Thuy   */
+
+.containerHeader {
+  width: 100%;
+  display: flex;
+  position: fixed;
+  top: 0;
+  height: var(--nav-height);
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--bannerColor);
+  z-index: 10;
+}
+
+.menu-items ul {
+  float: right;
+}
+.menu-items li {
+  display: inline-block;
+  list-style: none;
+  padding: var(--spacing);
+}
+.menu-items a {
+  transition: 0.4s;
+  color: var(--bannerTextColor);
+  font-family: var(--title-font);
+  text-decoration: none;
+  font-weight: 600;
+  line-height: var(--nav-height);
+}
+
+.menu-items a:hover {
+  color: #f7cc7e;
+  /* padding: var(--spacing-4) var(--spacing-2); */
+  /*  font-size: 14pt; */
+}
+
+.logo img {
+  width: calc(var(--nav-height) * 1.2);
+}
+
+.menu-burger,
+.close {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-burger {
+    display: inline-block;
+  }
+
+  .logo {
+    width: 50px;
+  }
+  .menu-burger a {
+    color: var(--bannerTextColor);
+    text-decoration: none;
+    float: right;
+    font-size: calc(var(--text-font-size) * 1.2);
+    font-weight: 600;
+    margin: var(--spacing-4);
+  }
+  .menu-items {
+    display: none;
+  }
+  .menu-items:target {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    font-size: var(--text-font-size);
+    background-color: var(--bannerColor);
+    opacity: 0.95;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+  }
+  .menu-items ul {
+    margin-left: -10%;
+    margin-right: var(--spacing-2);
+  }
+  .menu-items li:not(:last-child) {
+    border: 2px solid var(--secondary-color);
+    border-radius: 15px;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin: var(--spacing);
+  }
+  .close {
+    display: block;
+    margin-right: 10%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: var(--title-font-size);
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .menu-items li {
+    padding: var(--spacing);
+    margin: auto 0;
+  }
+
+  #aboutMe p {
+    line-height: 30px;
+    font-family: var(--text-font);
+  }
+}
+/*STYLE for the title and background image - Thuy*/
+
+.backgroundImage {
+  margin-top: var(--nav-height);
+  background: url("images/backgroundImgAccueil.jpg");
+  height: calc(var(--nav-height) * 10);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: var(--title-font);
+  font-size: 50px;
+  color: var(--light);
+  text-shadow: 5px 5px 10px var(--dark), 5px 5px 1em var(--dark),
+    5px 5px 1em var(--dark);
+}
+
+/*STYLE for section About Me - Thuy*/
+#aboutMe {
+  background-color: var(--secondary-color);
+}
+
+.aboutMe {
+  width: 75%;
+  margin: auto;
+  height: calc(var(--nav-height) * 8);
+  background-color: var(--secondary-color);
+  box-sizing: border-box;
+  border-radius: var(--spacing);
+}
+
+.photoProfile {
+  width: calc(var(--nav-height) * 5);
+  height: calc(var(--nav-height) * 5);
+  background: url("images/aboutme.jpg");
+  background-size: 100% 100%;
+  border-radius: 50%;
+  float: left;
+  shape-outside: circle();
+  padding: auto var(--spacing-4);
+  margin: 30px;
+}
+.aboutMe h2 {
+  color: var(--primary-color);
+  text-align: center;
+  font-family: var(--title-font);
+}
+.aboutMe p {
+  color: var(--dark);
+  line-height: 24px;
+  font-family: var(--text-font);
+  line-height: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .aboutMe {
+    width: 90%;
+    height: calc(var(--nav-height) * 12);
+    display: grid;
+    grid-template-rows: 50px 300px 500px;
+    gap: 30px;
+  }
+  .photoProfile {
+    width: calc(var(--nav-height) * 3.5);
+    height: calc(var(--nav-height) * 3.5);
+    margin: auto;
+  }
+  .aboutMe p {
+    text-align: justify;
+    font-family: var(--text-font);
+  }
+
+  #aboutMe {
+    padding-bottom: var(--spacing-4);
+  }
+  .hidden {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .hidden {
+    display: none;
+  }
+}
+
+/* Affichage reposnisive Joel pour la partie Experience /*/
+
+.myWorkExperience {
+  background-color: var(--primary-color);
+}
+
+.flexBoxContainerExperiences {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.myWorkExperience h2,
+h3 {
+  text-align: center;
+  color: var(--light);
+}
+
+.myWorkExperience p {
+  font-family: var(--text-font);
+  text-align: justify;
+  color: var(--light);
+  font-weight: 400;
+}
+
+.myWorkExperience figcaption {
+  color: var(--light);
+  font-size: var(---text-font-size);
+  font-family: var(--title-font);
+}
+
+.experienceContent {
+  height: 300px;
+  margin: 0 var(--spacing-4);
+}
+
+.experienceContent p,
+h3 {
+  color: var(--light);
+}
+
+.experienceContent p {
+  font-family: var(--text-font);
+  font-weight: 400;
+}
+
+.flexBoxContainerExperiences .experience {
+  height: 100%;
+  text-align: center;
+}
+
+.experience {
+  height: 1000px;
+  margin: auto;
+}
+.experience img {
+  height: 400px;
+  padding: var(--spacing);
+}
+
+.experience:nth-child(2) img {
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  /* Styles pour cette Media Queries */
+  .flexBoxContainerExperiences {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .experienceContent {
+    margin-bottom: var(--spacing-4);
+  }
+}
+
+/* @media screen and (max-width: 1030px) {
+  .myWorkExperience {
+    padding: 0 0 200px 0;
+  }
+}
+ */
+/* SKILLS PART Serdar*/
+
+#skills {
+  background-color: var(--secondary-color);
+}
+
+.talents {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: var(--spacing-4);
+}
+
+.talent {
+  background-color: var(--light);
+  width: 400px;
+  padding: 15px;
+  margin: 10px;
+  border-radius: var(--spacing);
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+}
+.talent h3 {
+  color: var(--dark);
+}
+
+.talent:hover {
+  /*   background: url("./images/thumbtack.png") no-repeat; */
+  background-color: white;
+  background-position: top center;
+  background-size: 20px;
+  transform: rotate(-5deg) scale(0.95);
+  transition: transform 0.5s;
+}
+
+#skills h3,
+h2 {
+  color: var(--dark);
+  font-family: var(--title-font);
+  text-align: center;
+}
+
+#skills p {
+  font-family: var(--text-font);
+  color: var(--dark);
+  font-weight: 400;
+}
+#skills .talent img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  float: left;
+  margin: 15px;
+  padding-top: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  #skills .talent img {
+    float: none;
+  }
+
+  .talent {
+    text-align: center;
+  }
+}
+/* CSS Assset part of Sév */
+#assets {
+  background-color: var(--dark);
+  color: var(--light);
+  text-align: center;
+}
+
+#assets h3 {
+  color: var(--light);
+  font-family: var(--title-font);
+  margin: 0 0 var(--spacing-2) 0;
+}
+
+#assets h2 {
+  color: var(--light);
+  font-family: var(--title-font);
+  margin: var(--spacing-4) 0;
+}
+
+#assets p {
+  font-family: var(--text-font);
+  text-align: justify;
+  margin: 0 0 var(--spacing-2) 0;
+  color: var(--light);
+  font-weight: 400;
+}
+.weapons {
+  display: grid;
+  grid: 500px 500px 500px / 45% 45%;
+  margin-bottom: var(--spacing-4);
+  grid-column-gap: 30px;
+}
+
+.weapons .weapon:nth-child(odd) img {
+  transform: rotate(5deg);
+}
+
+.weapons .weapon:nth-child(even) img {
+  transform: rotate(-5deg);
+}
+.weapon {
+  padding-bottom: var(--spacing-2);
+}
+
+.weaponContent {
+  padding: 0 80px;
+}
+@media screen and (max-width: 768px) {
+  .weapons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .weapons img {
+    max-width: 300px;
+  }
+
+  .weapon p {
+    width: 300px;
+    margin: auto;
+  }
+}
+
+/* Style from Form */
+
+.formContainer {
+  background-color: var(--primary-color);
+  margin: auto;
+  width: 100%;
+}
+
+.formSet {
+  font-family: var(--text-font);
+}
+
+.formContainer h2 {
+  font-family: var(--title-font);
+  color: var(--secondary-color);
+  font-weight: var(--bold);
+}
+
+.formContainer p {
+  margin: 0px;
+  padding: var(--spacing-4) 0px;
+  color: var(--secondary-color);
+  font-family: var(--text-font);
+  text-align: center;
+  font-weight: 400;
+}
+
+.formSet label {
+  display: block;
+  padding: var(--spacing) 0px var(--spacing) 0px;
+  color: var(--secondary-color);
+  font-size: 1.1em;
+}
+
+.formSet input {
+  height: var(--spacing-4);
+  font-size: 1.1em;
+  border-radius: 5px;
+  width: 100%;
+  border: 2px solid var(--primary-color);
+  margin-bottom: var(--spacing);
+  padding-left: 10px;
+}
+
+.formSet select {
+  width: 100%;
+  height: var(--spacing-4);
+  font-size: 1.1em;
+  /*  border: 2px solid var(--primary-color); */
+}
+
+.formSet input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0px 1px var(--primary-color);
+}
+
+.formSet textarea {
+  resize: none;
+  width: 100%;
+  height: 200px;
+  font-size: 1.1em;
+  font-family: var(--text-font);
+  border-radius: 5px;
+  border: 2px solid var(--primary-color);
+  padding: 10px 0 0 10px;
+}
+
+.formSet textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 1px var(--primary-color);
+}
+
+.formSet input[type="submit"] {
+  max-width: 150px;
+  padding: var(--spacing);
+  text-align: center;
+  margin: 2% 45%;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  height: 50px;
+  border-radius: 50px;
+}
+
+.formSet input[type="submit"]:focus {
+  background-color: #f7cc7e;
+  color: var(--primary-color);
+}
+
+/* Styles for Footer */
+
+footer {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  width: 100%;
+  height: 100px;
+  font-size: 18px;
+}
+
+.footerContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footerContainer p {
+  font-size: 1em;
+  margin-top: var(--spacing);
+  text-align: center;
+  font-weight: 800;
+}
+
+.footerCopyright {
+  margin-top: 25px;
+  font-weight: var(--bold);
+}
+
+.footerContact p {
+  padding: 0px;
+}
+
+.footerContact p:first-child {
+  margin: 25px 0 0 0;
+}
+
+.footerIcon img {
+  max-width: 50px;
+  max-height: 50px;
+  margin-top: 25px;
+}
+.error {
+  color: red;
+  text-align: center;
+  padding: var(--spacing);
+  border-radius: 4px;
+  margin: var(--spacing);
+  list-style: none;
+}
+
+@media only screen and (max-width: 768px) {
+  /* Responsivity settings for form and footer */
+
+  footer {
+    height: 220px;
+    text-align: center;
+  }
+  .footerContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footerIcon {
+    display: inline-block;
+  }
+
+  .footerIcon img {
+    max-width: 30px;
+    max-height: 30px;
+    margin-top: 10px;
+  }
+
+  .formSet input {
+    width: 100%;
+  }
+
+  .formSet input[type="submit"] {
+    max-width: 120px;
+    padding: var(--spacing);
+    text-align: center;
+    margin: var(--spacing-2) var(--spacing-2) var(--spacing-2) 145px;
+    height: 40px;
+  }
+}
